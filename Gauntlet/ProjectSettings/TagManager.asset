@@ -10,6 +10,10 @@ TagManager:
   - spawner
   - key
   - door
+  - health
+  - gold
+  - exit
+  - finish
   layers:
   - Default
   - TransparentFX

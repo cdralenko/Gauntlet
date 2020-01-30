@@ -10,36 +10,43 @@ public class Enemy : MonoBehaviour
     private GameObject playerobject;
     private Transform player;
     public int health;
+    GameObject gc;
 
     // Start is called before the first frame update
     void Start()
     {
         playerobject = GameObject.Find("Player");
-
+        gc = GameObject.FindGameObjectWithTag("GameController");
         rb = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        player = playerobject.GetComponent<Transform>();
-
-
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
-        direction.Normalize();
-        movement = direction;
-
-        if (health == 0)
+        if (gc.GetComponent<scr_game_controller>().pause == false)
         {
-            Destroy(gameObject);
+                player = playerobject.GetComponent<Transform>();
+
+
+                Vector3 direction = player.position - transform.position;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                rb.rotation = angle;
+                direction.Normalize();
+                movement = direction;
+
+                if (health == 0)
+                {
+                    Destroy(gameObject);
+                }
         }
     }
 
     private void FixedUpdate()
     {
-        moveCharacter(movement);
+        if (gc.GetComponent<scr_game_controller>().pause == false)
+        {
+                moveCharacter(movement);
+        }
     }
 
     void moveCharacter(Vector2 direction)

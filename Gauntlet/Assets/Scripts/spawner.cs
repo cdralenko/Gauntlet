@@ -9,6 +9,7 @@ public class spawner : MonoBehaviour
     public GameObject enemy;
     public Vector3 spawnplace;
     public int health;
+    GameObject gc;
 
     private int counter;
 
@@ -16,22 +17,26 @@ public class spawner : MonoBehaviour
     void Start()
     {
         counter = spawndelay;
+        gc = GameObject.FindGameObjectWithTag("GameController");
     }
 
     // Update is called once per frame
     void Update()
     {
-        counter--;
-
-        if (counter == 0)
+        if (gc.GetComponent<scr_game_controller>().pause == false)
         {
-        Instantiate(enemy, spawnplace, Quaternion.identity);
-        counter = spawndelay;
-        }
+                counter--;
 
-        if (health == 0)
-        {
-            Destroy(gameObject);
+                if (counter == 0)
+                {
+                    Instantiate(enemy, spawnplace, Quaternion.identity);
+                    counter = spawndelay;
+                }
+
+                if (health == 0)
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
     }
-}
