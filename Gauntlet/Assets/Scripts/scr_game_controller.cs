@@ -10,6 +10,7 @@ public class scr_game_controller : MonoBehaviour
     public int key;
     public int health;
     public int score;
+    public bool win;
 
     public Text endtext;
     public Text scoretext;
@@ -24,6 +25,7 @@ public class scr_game_controller : MonoBehaviour
         key = 0;
         health = totalhealth;
         score = 0;
+        win = false;
 
         endtext.text = "";
         scoretext.text = "";

@@ -13,12 +13,21 @@ public class scr_player_controller : MonoBehaviour
     Renderer rend;
     Color c;
 
+    private SpriteRenderer sr;
+
+    public Sprite leftsprite;
+    public Sprite rightsprite;
+    public Sprite upsprite;
+    public Sprite downsprite;
+
+
     // Direction numbers are 0-7 going counter clockwise
     public int direction; 
 
     // Start is called before the first frame update
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         obj = GameObject.FindGameObjectWithTag("GameController");
         vulnerable = true;
         shootpause = false;
@@ -47,14 +56,14 @@ public class scr_player_controller : MonoBehaviour
                 if ((Input.GetKey(KeyCode.S)) || (Input.GetKeyDown(KeyCode.DownArrow)))
                 {
                     transform.position = transform.position - new Vector3(0, playerspeed, 0);
-                    transform.localEulerAngles = new Vector3(0, 0, 180);
+                    transform.localEulerAngles = new Vector3(0, 0, 0);
                     direction = 4;
                 }
 
                 if ((Input.GetKey(KeyCode.A)) || (Input.GetKeyDown(KeyCode.LeftArrow)))
                 {
                     transform.position = transform.position - new Vector3(playerspeed, 0, 0);
-                    transform.localEulerAngles = new Vector3(0, 0, 90);
+                    transform.localEulerAngles = new Vector3(0, 0, 0);
                     direction = 2;
 
                 }
@@ -62,36 +71,44 @@ public class scr_player_controller : MonoBehaviour
                 if ((Input.GetKey(KeyCode.D)) || (Input.GetKeyDown(KeyCode.RightArrow)))
                 {
                     transform.position = transform.position + new Vector3(playerspeed, 0, 0);
-                    transform.localEulerAngles = new Vector3(0, 0, 270);
+                    transform.localEulerAngles = new Vector3(0, 0, 0);
                     direction = 6;
                 }
 
                 //Movement code secondary directions (NW NE SW SE)
+                //up left
                 if (((Input.GetKey(KeyCode.W)) || (Input.GetKeyDown(KeyCode.UpArrow))) && ((Input.GetKey(KeyCode.A)) || (Input.GetKeyDown(KeyCode.LeftArrow))))
                 {
                     transform.localEulerAngles = new Vector3(0, 0, 45);
                     direction = 1;
                 }
 
+                //up right
                 if (((Input.GetKey(KeyCode.W)) || (Input.GetKeyDown(KeyCode.UpArrow))) && ((Input.GetKey(KeyCode.D)) || (Input.GetKeyDown(KeyCode.RightArrow))))
                 {
                     transform.localEulerAngles = new Vector3(0, 0, 315);
                     direction = 7;
                 }
-
+                //down left
                 if (((Input.GetKey(KeyCode.S)) || (Input.GetKeyDown(KeyCode.DownArrow))) && ((Input.GetKey(KeyCode.A)) || (Input.GetKeyDown(KeyCode.LeftArrow))))
                 {
-                    transform.localEulerAngles = new Vector3(0, 0, 135);
+                    transform.localEulerAngles = new Vector3(0, 0, 315);
                     direction = 3;
                 }
 
+                //down right
                 if (((Input.GetKey(KeyCode.S)) || (Input.GetKeyDown(KeyCode.DownArrow))) && ((Input.GetKey(KeyCode.D)) || (Input.GetKeyDown(KeyCode.RightArrow))))
                 {
-                    transform.localEulerAngles = new Vector3(0, 0, 225);
+                    transform.localEulerAngles = new Vector3(0, 0, 45);
                     direction = 5;
                 }
                 #endregion //direction code
             }
+
+            if ((direction == 0) || (direction == 1) || (direction == 7)) {sr.sprite = upsprite;}
+            if ((direction == 4) || (direction == 3) || (direction == 5)) {sr.sprite = downsprite;}
+            if (direction == 6) {sr.sprite = rightsprite;}
+            if (direction == 2) {sr.sprite = leftsprite;}
 
             //shoots a projectile. Also starts coroutine that briefly stops the player
             if (Input.GetKeyDown(KeyCode.Space))
@@ -155,6 +172,7 @@ public class scr_player_controller : MonoBehaviour
         if (other.tag == "finish")
         {
             obj.GetComponent<scr_game_controller>().endtext.text = "You Win!";
+            obj.GetComponent<scr_game_controller>().win = true;
             obj.GetComponent<scr_game_controller>().pause = true;
         }
     }

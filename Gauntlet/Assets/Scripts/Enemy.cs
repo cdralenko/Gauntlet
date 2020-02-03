@@ -36,7 +36,13 @@ public class Enemy : MonoBehaviour
 
                 if (health == 0)
                 {
+                gc.GetComponent<scr_game_controller>().score += 10;
                     Destroy(gameObject);
+                }
+
+                if (gc.GetComponent<scr_game_controller>().win == true)
+                {
+                Destroy(gameObject);
                 }
         }
     }

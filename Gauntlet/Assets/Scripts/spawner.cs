@@ -35,6 +35,7 @@ public class spawner : MonoBehaviour
 
                 if (health == 0)
                 {
+                    gc.GetComponent<scr_game_controller>().score += 30;
                     Destroy(gameObject);
                 }
             }
