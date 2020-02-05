@@ -4,16 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - walls
-  - enemy
   - arrow
-  - spawner
-  - key
-  - door
+  - enemy
   - health
+  - key
+  - spawner
   - gold
-  - exit
+  - walls
   - finish
+  - door
   layers:
   - Default
   - TransparentFX
@@ -51,9 +50,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 2799874951
+    locked: 0
+  - name: Walls
+    uniqueID: 1971793597
+    locked: 0
   - name: Projectiles
-    uniqueID: 579900427
+    uniqueID: 548304429
     locked: 0
   - name: GameplayElements
-    uniqueID: 2726075235
+    uniqueID: 302780323
     locked: 0
