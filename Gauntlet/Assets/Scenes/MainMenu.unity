@@ -214,7 +214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &29553615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 182443890}
   - component: {fileID: 182443889}
   m_Layer: 5
-  m_Name: How Text
+  m_Name: how to play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,13 +529,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 247207515}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Decor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &247207515
 Transform:
   m_ObjectHideFlags: 0
@@ -641,7 +641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 329060119}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Scores Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8301887, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -996,7 +996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &639859940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1567,7 +1567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -47.902996, y: 112.836}
+  m_AnchoredPosition: {x: -50, y: 96}
   m_SizeDelta: {x: 797.5, y: 92.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117867804
@@ -1590,20 +1590,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9bc278c6fb1cbf94c8fee09b93d856ca, type: 3}
-    m_FontSize: 42
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 50
+    m_MaxSize: 70
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'GAUNTLET 2:
-
-    ELECTRIC BOOGALOO'
+  m_Text: GAUNTLET
 --- !u!222 &1117867805
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1790,7 +1788,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1238391770}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: About Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1828,7 +1826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1408916037}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Scores Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1944,7 +1942,7 @@ GameObject:
   - component: {fileID: 1586252668}
   - component: {fileID: 1586252667}
   m_Layer: 5
-  m_Name: Team Text
+  m_Name: high scores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2027,7 +2025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1646888557
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2296,7 +2294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1747458609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2452,7 +2450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -43.602997, y: 117.436005}
+  m_AnchoredPosition: {x: -43.602997, y: 101.6}
   m_SizeDelta: {x: 797.5, y: 92.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1764051736
@@ -2475,20 +2473,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9bc278c6fb1cbf94c8fee09b93d856ca, type: 3}
-    m_FontSize: 42
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 50
+    m_MaxSize: 70
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'GAUNTLET 2:
-
-    ELECTRIC BOOGALOO'
+  m_Text: GAUNTLET
 --- !u!222 &1764051737
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2515,7 +2511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1790918965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2648,7 +2644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.82675445, g: 0.83137256, b: 0, a: 1}
+  m_Color: {r: 0.9254902, g: 0.8862745, b: 0.1254902, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2770,7 +2766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1823000393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2823,7 +2819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1826969917
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3064,7 +3060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!20 &2049827892
 Camera:
   m_ObjectHideFlags: 0

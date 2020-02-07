@@ -25,19 +25,19 @@ public class spawner : MonoBehaviour
     {
         if (gc.GetComponent<scr_game_controller>().pause == false)
         {
-                counter--;
+            counter--;
 
-                if (counter == 0)
-                {
-                    Instantiate(enemy, spawnplace, Quaternion.identity);
-                    counter = spawndelay;
-                }
+            if (counter == 0)
+            {
+                Instantiate(enemy, spawnplace, Quaternion.identity);
+                counter = spawndelay;
+            }
 
-                if (health == 0)
-                {
-                    gc.GetComponent<scr_game_controller>().score += 30;
-                    Destroy(gameObject);
-                }
+            if ((health == 0) || (gc.GetComponent<scr_game_controller>().win == true))
+            {
+                gc.GetComponent<scr_game_controller>().score += 30;
+                Destroy(gameObject);
             }
         }
     }
+}

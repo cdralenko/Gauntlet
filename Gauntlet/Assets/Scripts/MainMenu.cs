@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    private void Start()
+    {
+        SceneManager.UnloadSceneAsync("WinScreen");
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Gauntlet");
     }
 
     public void QuitGame()

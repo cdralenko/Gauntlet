@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class scr_player_controller : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class scr_player_controller : MonoBehaviour
     void Update()
     {
         //allows for the pausing system to work by freezing any updates that the player would make
-        if (obj.GetComponent<scr_game_controller>().pause == false)
+        if ((obj.GetComponent<scr_game_controller>().pause == false) || (obj.GetComponent<scr_game_controller>().win == true))
         {
             if (shootpause == false)
             {
@@ -171,9 +172,12 @@ public class scr_player_controller : MonoBehaviour
 
         if (other.tag == "finish")
         {
-            obj.GetComponent<scr_game_controller>().endtext.text = "You Win!";
-            obj.GetComponent<scr_game_controller>().win = true;
-            obj.GetComponent<scr_game_controller>().pause = true;
+            SceneManager.LoadScene("Gauntlet_Lvl2");
+        }
+
+        if (other.tag == "finish2")
+        {
+            SceneManager.LoadScene("WinScreen");
         }
     }
 
@@ -193,7 +197,7 @@ public class scr_player_controller : MonoBehaviour
     IEnumerator shoot()
     {
         shootpause = true;
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.35f);
         shootpause = false;
     }
 }

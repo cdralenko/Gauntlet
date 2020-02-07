@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class scr_game_controller : MonoBehaviour
 {
@@ -10,33 +11,30 @@ public class scr_game_controller : MonoBehaviour
     public int key;
     public int health;
     public int score;
-    public bool win;
 
     public Text endtext;
     public Text scoretext;
     public Text healthtext;
 
     public bool pause = false;
+    public bool win = false;
 
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         key = 0;
         health = totalhealth;
         score = 0;
-        win = false;
 
         endtext.text = "";
         scoretext.text = "";
         healthtext.text = "";
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        scoretext.text = "Score: " + score;
-        healthtext.text = "Health: " + health;
+        scoretext.text = "SCORE: " + score;
+        healthtext.text = "HEALTH: " + health;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!pause) { pause = true; }
@@ -46,7 +44,12 @@ public class scr_game_controller : MonoBehaviour
 
         if (health == 0)
         {
-            endtext.text = "You Failed, Scrub";
+            SceneManager.LoadScene("EndScreen");
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Application.Quit();
         }
     }
 }

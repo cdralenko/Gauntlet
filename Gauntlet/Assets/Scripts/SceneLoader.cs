@@ -5,8 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private bool exitLevel;
+
+    private void Start()
     {
-        SceneManager.LoadScene("Gauntlet_Lvl2");
+        exitLevel = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("Gauntlet_Lvl2");
+            exitLevel = true;
+        }
+    }
+
+    private void Update()
+    {
+        if (exitLevel)
+        {
+            SceneManager.UnloadSceneAsync("Gauntlet");
+        }
     }
 }

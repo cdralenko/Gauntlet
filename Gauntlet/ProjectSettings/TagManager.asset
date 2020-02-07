@@ -13,6 +13,7 @@ TagManager:
   - walls
   - finish
   - door
+  - finish2
   layers:
   - Default
   - TransparentFX
