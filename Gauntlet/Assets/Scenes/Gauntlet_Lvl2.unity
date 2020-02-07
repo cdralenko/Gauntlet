@@ -9199,11 +9199,11 @@ MonoBehaviour:
   key: 0
   health: 0
   score: 0
-  win: 0
   endtext: {fileID: 676325611}
   scoretext: {fileID: 390538414}
   healthtext: {fileID: 1263944852}
   pause: 0
+  win: 0
 --- !u!4 &1325289720
 Transform:
   m_ObjectHideFlags: 0
